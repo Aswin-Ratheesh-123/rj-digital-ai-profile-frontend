@@ -17,7 +17,7 @@ export const myProjects = [
   },
   {
     id: 3,
-    title: "Maestro Insurance & Investments",
+    title: "Maestro Insurance",
     description: "Insurance Website",
     image: "/images/maestroinsure.png",
     tags: ["React"],

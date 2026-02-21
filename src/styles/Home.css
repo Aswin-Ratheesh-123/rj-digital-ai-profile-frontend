@@ -97,7 +97,7 @@
   height: 1.2em;
   overflow: hidden;
   vertical-align: bottom;
-  margin-left: 15px;
+
 }
 
 /* Stack words vertically */
@@ -226,7 +226,7 @@
   }
 
   .home-content h1 {
-    font-size: 59px;
+    font-size: 46px;
   }
 
   .home-content p {
