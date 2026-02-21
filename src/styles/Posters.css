@@ -1,0 +1,233 @@
+.posters-section {
+  min-height: 150vh;
+  background: radial-gradient(circle at center, #111, #050505);
+  color: white;
+  padding: 120px 8%;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.posters-heading {
+  font-size: 80px;
+  margin-bottom: 100px;
+}
+
+/* Stage container */
+.poster-stage {
+  display: flex;
+  margin-top: 100px;
+  justify-content: center;
+  align-items: center;
+  gap: 60px;
+  perspective: 1200px;
+  position: relative;
+  z-index: 2;
+}
+
+/* Poster card */
+.poster-card {
+  width: 260px;
+  height: 420px;
+  border-radius: 20px;
+  overflow: hidden;
+
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(12px);
+
+  box-shadow:
+    0 40px 120px rgba(0, 0, 0, 0.7),
+    0 0 20px rgba(77, 166, 255, 0.2);
+
+  transition: transform 0.2s linear, opacity 0.2s linear;
+  transform: translateY(120px) scale(0.85);
+  opacity: 0.3;
+}
+
+.poster-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Hover glow */
+.poster-card:hover {
+  box-shadow:
+    0 50px 140px rgba(0, 0, 0, 0.9),
+    0 0 40px rgba(77, 166, 255, 0.4);
+}
+
+
+.posters-subtext {
+  max-width: 700px;
+  margin: -40px auto 80px auto;
+  margin-top: 70px;
+  font-size: 20px;
+  color: #cfcfcf;
+  line-height: 1.6;
+  text-align: right;
+}
+
+
+/* Fade-up animation base */
+.fade-up {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 1.8s ease, transform 1.8s ease;
+}
+
+/* Active state */
+.fade-up.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+.posters-bg-text {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Foreground content */
+.posters-foreground {
+  position: relative;
+  z-index: 2;
+}
+
+.poster-view-more {
+  margin-top: 80px;
+  text-align: center;
+}
+
+.view-more-btn {
+  display: inline-block;
+  padding: 14px 36px;
+  border-radius: 40px;
+  background: linear-gradient(90deg, #4da6ff, #7b61ff);
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.view-more-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 30px rgba(77, 166, 255, 0.4);
+}
+
+
+/* Tablet */
+@media (max-width: 768px) {
+  .poster-stage {
+    gap: 30px;
+  }
+
+  .poster-card {
+    width: 200px;
+    height: 320px;
+  }
+
+  .posters-heading {
+    font-size: 48px;
+  }
+}
+
+.poster-swiper {
+  display: none;
+}
+
+
+/* =========================
+   MOBILE – AI VIDEO STYLE SLIDER
+========================= */
+/* =========================
+   MOBILE – CLEAN RESPONSIVE FIX
+========================= */
+@media (max-width: 480px) {
+
+  .posters-section {
+    min-height: 100vh;
+    padding: 80px 20px;
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+  }
+
+  /* PERFECT CENTER BACKGROUND TEXT */
+  .posters-bg-text {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 0;
+    pointer-events: none;
+  }
+
+  .bg-heading {
+    font-size: clamp(50px, 18vw, 140px);
+    font-weight: 900;
+
+    background: linear-gradient(90deg, #f0f3f6, #f7f6fc);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+  }
+
+  /* Foreground above background */
+  .posters-foreground {
+    position: relative;
+    z-index: 2;
+  }
+
+  /* Subtext */
+  .posters-subtext {
+    text-align: center;
+    font-size: 15px;
+    margin: 0 auto 50px auto;
+    max-width: 280px;
+    line-height: 1.6;
+  }
+
+  /* Hide desktop layout */
+  .poster-stage {
+    display: none;
+  }
+
+  /* Mobile slider */
+  .poster-swiper {
+    display: block;
+    padding: 0 10px;
+  }
+
+  .poster-swiper .swiper-slide {
+    display: flex;
+    justify-content: center;
+    opacity: 0.5;
+    transition: all 0.4s ease;
+  }
+
+  .poster-swiper .swiper-slide-active {
+    opacity: 1;
+  }
+
+  .mobile-card {
+    width: 190px;
+    height: 290px;
+    border-radius: 18px;
+    transform: scale(0.85);
+    transition: transform 0.4s ease;
+    opacity: 1;
+  }
+
+  .swiper-slide-active .mobile-card {
+    transform: scale(1);
+  }
+
+}

@@ -1,0 +1,144 @@
+/* Navbar base */
+.navbar {
+    position: fixed;
+    top: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 95%;
+    max-width: 1100px;
+    z-index: 1000;
+    border-radius: 14px;
+    padding: 12px 10px;
+
+    transition: all 0.4s ease;
+}
+
+/* Visible state */
+.navbar.show {
+    opacity: 1;
+    transform: translate(-50%, 0);
+}
+
+/* Hidden state */
+.navbar.hide {
+    opacity: 0;
+    transform: translate(-50%, -80px);
+}
+
+
+
+
+
+/* Container */
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Logo */
+.nav-logo img {
+    height: 40px;
+}
+
+/* Hamburger (always visible) */
+.hamburger {
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 5px;
+    z-index: 1100;
+}
+
+.hamburger span {
+    width: 26px;
+    height: 3px;
+    background: white;
+    border-radius: 2px;
+    transition: 0.3s;
+}
+
+/* Hamburger animation */
+.hamburger.active span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburger.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(6px, -6px);
+}
+
+/* Slide-in menu (same for all screens) */
+.nav-links {
+    position: fixed;
+    top: 0;
+    right: -82px;
+    height: 100vh;
+    width: 320px;
+    background: linear-gradient(180deg, #020617, #000000);
+    list-style: none;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 35px;
+
+    transform: translateX(100%);
+    transition: transform 0.4s ease;
+    z-index: 1000;
+}
+
+.nav-links.open {
+    transform: translateX(0);
+}
+
+.nav-links li a {
+    color: #cbd5f5;
+    text-decoration: none;
+    font-size: 18px;
+    transition: 0.3s;
+}
+
+.nav-links li a:hover {
+    color: #4da6ff;
+}
+
+/* Overlay */
+.menu-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 900;
+}
+
+
+.logo h1 {
+  color: white;
+  
+}
+
+
+@media (max-width: 480px) {
+
+  .nav-links {
+    width: 85%;              /* Responsive width */
+    max-width: 300px;
+    padding-right: 60px;
+  }
+
+  .nav-links li a {
+    font-size: 20px;         /* Bigger touch-friendly */
+  }
+  .navbar {
+    
+    top: 0px;
+    left: 50%;
+  
+   
+}
+
+}

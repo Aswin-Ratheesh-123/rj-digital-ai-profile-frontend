@@ -1,0 +1,149 @@
+.about-section {
+    min-height: 100vh;
+    padding: 100px 20px;
+    color: white;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    /* background image */
+    background: url("../assests/images/background1.jpg") center/cover no-repeat;
+}
+
+.about-section::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.55);
+    /* dark overlay */
+    z-index: 0;
+}
+
+
+
+/* Image container centered */
+.about-images {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 420px;
+    height: 420px;
+    pointer-events: none;
+    z-index: 0;
+}
+
+/* Individual image style */
+.about-img {
+    position: absolute;
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: transform 0.2s linear;
+    opacity: 0.85;
+    transform-origin: center;
+    will-change: transform;
+    /* performance boost */
+}
+
+
+.about-container {
+    max-width: 900px;
+    margin: auto;
+    position: relative;
+    z-index: 2;
+}
+
+
+/* Heading */
+.about-heading {
+    font-size: 62px;
+    margin-bottom: 30px;
+}
+
+/* Paragraph */
+.about-text {
+    font-size: 36px;
+    line-height: 1.6;
+}
+
+/* Line spacing */
+.line {
+    display: block;
+    margin-bottom: 8px;
+}
+
+/* Default letter */
+.letter {
+    color: #484848;
+    transition: color 0.25s ease;
+}
+
+/* Filled letter */
+.letter.filled {
+    color: rgb(255, 255, 255);
+}
+
+
+/* Tablet */
+@media (max-width: 768px) {
+    .about-heading {
+        font-size: 36px;
+    }
+
+    .about-text {
+        font-size: 18px;
+    }
+
+    .about-images {
+        width: 280px;
+        height: 280px;
+    }
+
+    .about-img {
+        width: 80px;
+        height: 80px;
+    }
+
+    .about-section {
+        min-height: 100vh;
+        padding: 80px 20px;
+    }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+    .about-heading {
+        font-size: 28px;
+
+    }
+
+    .about-text {
+        font-size: 16px;
+
+    }
+
+    .about-images {
+        width: 200px;
+        height: 200px;
+    }
+
+    .about-img {
+        width: 90px;
+        height: 90px;
+        opacity: 0.6;
+    }
+
+    .about-section {
+        min-height: 100vh;
+        padding: 70px 15px;
+        align-items: center;
+    }
+}

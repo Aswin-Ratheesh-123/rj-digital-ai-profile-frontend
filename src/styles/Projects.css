@@ -1,0 +1,278 @@
+.projects-section {
+  min-height: 100vh;
+  padding: 100px 8%;
+  background: #0d0d0d;
+  color: white;
+  position: relative;
+}
+
+
+.projects-title {
+  font-size: 48px;
+  margin-bottom: 40px;
+
+  text-align: center;
+  /* center the text */
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+
+  opacity: 0;
+  transform: translateY(60px);
+  transition: all 0.8s ease;
+}
+
+/* When section is reached */
+.projects-title.slide-in {
+  opacity: 1;
+
+}
+
+
+
+
+.projects-list {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+/* Project row */
+.project-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #333;
+  padding-bottom: 20px;
+  cursor: pointer;
+}
+
+.project-row h3 {
+  font-size: 24px;
+  margin-bottom: 8px;
+}
+
+.project-tags span {
+  margin-right: 15px;
+  font-size: 14px;
+  color: #aaa;
+}
+
+.read-btn {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+/* Cursor preview image */
+.preview-image {
+  position: fixed;
+  width: 260px;
+  height: 180px;
+  object-fit: cover;
+  pointer-events: none;
+  border-radius: 10px;
+  z-index: 1000;
+}
+
+/* Modal */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+}
+
+.modal-box {
+  background: #111;
+  padding: 30px;
+  border-radius: 12px;
+  max-width: 500px;
+  width: 90%;
+  text-align: center;
+}
+
+.modal-box img {
+  width: 100%;
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+
+.close-btn {
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+
+.projects-title {
+  font-size: 48px;
+  margin-bottom: 40px;
+
+  opacity: 0;
+  transform: translateY(60px);
+  transition: all 0.8s ease;
+}
+
+/* When section is reached */
+.projects-title.slide-in {
+  opacity: 1;
+
+}
+
+
+.view-more-container {
+  margin-top: 60px;
+  text-align: center;
+}
+
+.view-more-btn {
+  margin-top: 15px;
+  display: inline-block;
+  padding: 14px 36px;
+  border-radius: 40px;
+  background: linear-gradient(90deg, #4da6ff, #7b61ff);
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.view-more-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 30px rgba(77, 166, 255, 0.4);
+}
+
+
+.visit-btn {
+  display: inline-block;
+  margin-top: 25px;
+  padding: 12px 28px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: 500;
+
+  background: linear-gradient(90deg, #4da6ff, #7b61ff);
+  color: white;
+
+  transition: all 0.3s ease;
+}
+
+.visit-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 30px rgba(77, 166, 255, 0.4);
+}
+
+
+
+/* Mobile */
+@media (max-width: 768px) {
+  .project-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .preview-image {
+    display: none;
+  }
+}
+
+
+/* Project row animation */
+.project-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #333;
+  padding-bottom: 20px;
+  cursor: pointer;
+
+  opacity: 0;
+  transform: translateY(60px);
+  transition: all 0.7s ease;
+}
+
+/* When visible */
+.project-row.row-show {
+  opacity: 1;
+
+}
+
+.project-title {
+  font-size: 24px;
+  margin-bottom: 8px;
+  position: relative;
+  display: inline-block;
+  transition: color 0.3s ease;
+}
+
+/* Underline animation */
+.project-title::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 0%;
+  height: 2px;
+  background: linear-gradient(90deg, #4da6ff, #ff4d6d);
+  transition: width 0.4s ease;
+}
+
+/* Hover effect */
+.project-row:hover .project-title::after {
+  width: 100%;
+}
+
+.project-tags span {
+  margin-right: 15px;
+  font-size: 14px;
+  color: #aaa;
+
+  opacity: 0;
+  transform: translateY(10px);
+  animation: tagFade 0.6s forwards;
+}
+
+.project-row.row-show .project-tags span {
+  animation: tagFade 0.6s forwards;
+}
+
+@keyframes tagFade {
+  to {
+    opacity: 1;
+
+  }
+}
+
+.modal-box {
+  background: #111;
+  padding: 30px;
+  border-radius: 12px;
+  max-width: 500px;
+  width: 90%;
+  text-align: center;
+
+  transform: scale(0.85);
+  opacity: 0;
+  animation: modalPop 0.4s ease forwards;
+}
+
+@keyframes modalPop {
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
