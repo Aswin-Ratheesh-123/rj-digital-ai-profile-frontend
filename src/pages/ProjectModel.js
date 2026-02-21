@@ -1,7 +1,7 @@
 import React from "react";
 import "../styles/Projects.css";
 
-function ProjectModal({ title, description, image, link, close }) {
+function ProjectModal({ title, description, image, website, link, close }) {
   return (
     <div className="modal-overlay">
       <div className="modal-box">
@@ -14,9 +14,9 @@ function ProjectModal({ title, description, image, link, close }) {
         <h3>{title}</h3>
         <p>{description}</p>
 
-        {link && (
+        {website && (
           <a
-            href={link}
+            href={website}
             target="_blank"
             rel="noopener noreferrer"
             className="visit-btn"

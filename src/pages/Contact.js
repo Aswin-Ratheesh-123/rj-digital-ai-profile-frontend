@@ -44,7 +44,7 @@ function Contact() {
     setLoading(true);
 
     try {
-      const response = await fetch("http://localhost:5000/send-email", {
+      const response = await fetch("https://rj-digital-ai-profile-backend.vercel.app/send-email", {
         method: "POST",
         headers: {
           "Content-Type": "application/json"
@@ -70,7 +70,7 @@ function Contact() {
 
   return (
     <section className="contact-section" id="contact" ref={sectionRef}>
-      
+
       <div className="contact-bg-text">
         <h2>Contact</h2>
       </div>

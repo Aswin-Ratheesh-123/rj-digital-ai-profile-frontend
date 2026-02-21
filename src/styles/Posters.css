@@ -121,6 +121,22 @@
   box-shadow: 0 10px 30px rgba(77, 166, 255, 0.4);
 }
 
+.visit-btn {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 12px 28px;
+  border-radius: 30px;
+  background: linear-gradient(90deg, #4da6ff, #7b61ff);
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  transition: 0.3s ease;
+}
+
+.visit-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(77, 166, 255, 0.4);
+}
 
 /* Tablet */
 @media (max-width: 768px) {

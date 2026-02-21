@@ -6,6 +6,7 @@ function Project({
   description,
   image,
   tags,
+  website,
   setPreview,
 }) {
   const [open, setOpen] = useState(false);
@@ -63,6 +64,7 @@ function Project({
           title={title}
           description={description}
           image={image}
+          website={website}
           close={() => setOpen(false)}
         />
       )}
