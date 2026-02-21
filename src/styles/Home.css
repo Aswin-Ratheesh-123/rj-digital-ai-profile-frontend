@@ -239,11 +239,11 @@
   /* Move socials to bottom */
   .home-socials {
     top: auto;
-    bottom: 30px;
+    bottom: 60px;
     left: 50%;
     transform: translateX(-50%);
     flex-direction: row;
-    gap: 30px;
+    gap: 20px;
     padding-right: 50px;
   }
 
