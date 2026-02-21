@@ -239,7 +239,7 @@
   /* Move socials to bottom */
   .home-socials {
     top: auto;
-    bottom: 70px;
+    bottom: 80px;
     left: 50%;
     transform: translateX(-50%);
     flex-direction: row;
