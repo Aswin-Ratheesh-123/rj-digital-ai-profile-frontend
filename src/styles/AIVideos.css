@@ -208,12 +208,12 @@
 
   /* Reduce shadow intensity for mobile */
   .video-card {
-    box-shadow: 0 15px 40px rgba(0,0,0,0.6);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6);
   }
 
   /* View more button */
   .view-more-container {
-    margin-top: 50px;
+    margin-top: 82px;
   }
 
   .view-more-btn {
