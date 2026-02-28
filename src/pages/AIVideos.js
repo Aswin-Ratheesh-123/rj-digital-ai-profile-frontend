@@ -20,53 +20,53 @@ const videos = [
 function AIVideos() {
 
 
- const sectionRef = useRef(null);
+  const sectionRef = useRef(null);
 
-useEffect(() => {
-  const section = sectionRef.current;
-  if (!section) return;
+  useEffect(() => {
+    const section = sectionRef.current;
+    if (!section) return;
 
-  const fadeElements = section.querySelectorAll(".fade-up");
+    const fadeElements = section.querySelectorAll(".fade-up");
 
-  const observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          // Reset first (important)
-          fadeElements.forEach((el) => {
-            el.classList.remove("show");
-          });
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            // Reset first (important)
+            fadeElements.forEach((el) => {
+              el.classList.remove("show");
+            });
 
-          // Re-trigger animation
-          fadeElements.forEach((el, index) => {
-            setTimeout(() => {
-              el.classList.add("show");
-            }, index * 200);
-          });
-        } else {
-          // Remove when leaving
-          fadeElements.forEach((el) => {
-            el.classList.remove("show");
-          });
-        }
-      });
-    },
-    { threshold: 0.4 }
-  );
+            // Re-trigger animation
+            fadeElements.forEach((el, index) => {
+              setTimeout(() => {
+                el.classList.add("show");
+              }, index * 200);
+            });
+          } else {
+            // Remove when leaving
+            fadeElements.forEach((el) => {
+              el.classList.remove("show");
+            });
+          }
+        });
+      },
+      { threshold: 0.4 }
+    );
 
-  observer.observe(section);
+    observer.observe(section);
 
-  return () => {
-    observer.unobserve(section);
-  };
-}, []);
+    return () => {
+      observer.unobserve(section);
+    };
+  }, []);
 
   return (
-<section
-  ref={sectionRef}
-  className="ai-section"
-  id="ai-videos"
->
+    <section
+      ref={sectionRef}
+      className="ai-section"
+      id="ai-videos"
+    >
       {/* Background text */}
       <div className="ai-bg-text">
         <h2 className="bg-heading fade-up">AI VIDEOS</h2>
