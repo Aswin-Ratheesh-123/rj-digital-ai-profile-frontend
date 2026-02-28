@@ -26,7 +26,7 @@ function Home() {
   }, []);
 
   return (
-    <section className="home-section" id="home">
+    <section className="home-section" id="home" >
 
       {/* Social icons */}
       <div className="home-socials">
