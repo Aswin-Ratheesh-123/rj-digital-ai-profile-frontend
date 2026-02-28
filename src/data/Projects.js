@@ -38,5 +38,13 @@ export const myProjects = [
     image: "/images/mrtiledesigning.jpeg",
     tags: ["React"],
     website: "https://www.mrtiledesigning.com/"
+  },
+  {
+    id: 6,
+    title: "Squareonetly",
+    description: "Product Landing Page",
+    image: "/images/squareonetly.png",
+    tags: ["React"],
+    website: "https://www.squareonetly.com/"
   }
 ];
